@@ -9,7 +9,7 @@ def register_user(name,age,weight,height):
 def log_workout(user_id,exercise,duration,calories):
     conn=sqlite3.connect("fitness_tracker.db")
     cursor=conn.cursor()
-    cursor.execute("INSERT INTO workouts (user_id,exercise,duration,calories,date) VALUES (?,?,?,?,DATE('now'))",(user_id,exercise,calories))
+    cursor.execute("INSERT INTO workouts (user_id,exercise,duration,calories,date) VALUES (?,?,?,?,DATE('now'))",(user_id,exercise,duration,calories))
     conn.commit()
     conn.close()
     return " Workout Logged!"
